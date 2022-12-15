@@ -3,17 +3,19 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-        dump($_ENV['MY_SETTING']);
-        dump(env('MY_SETTING2'));
-        dump(config('database.connections.mysql.database'));
-        dump($_ENV);
+        $posts= DB::select("SELECT * FROM posts");
+        return $posts;
+        // dump($_ENV['MY_SETTING']);
+        // dump(env('MY_SETTING2'));
+        // dump(config('database.connections.mysql.database'));
+        // dump($_ENV);
         return view('home',['res' => 5,'name'=>"john"]);
     } 
     public function test(){
