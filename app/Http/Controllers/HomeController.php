@@ -10,6 +10,10 @@ class HomeController extends Controller
 
     public function index()
     {
+        $query= DB::insert("INSERT INTO posts(title,content) VALUES(?,? )",['State 3','Stete content3']) ;
+
+        var_dump($query);
+
         $posts= DB::select("SELECT * FROM posts");
         return $posts;
         // dump($_ENV['MY_SETTING']);
