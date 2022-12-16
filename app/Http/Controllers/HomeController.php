@@ -10,11 +10,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $query= DB::insert("INSERT INTO posts(title,content) VALUES(?,? )",['State 3','Stete content3']) ;
-
-        var_dump($query);
-
-        $posts= DB::select("SELECT * FROM posts");
+        // $query= DB::insert("INSERT INTO posts(title,content) VALUES(:title,:content )",['content'=>'State cintent 5','title'=>'State 5']);
+        DB::update('UPDATE posts Set created_at=?,updated_at=? Where created_at Is Null Or updated_at Is Null',[ Now(), Now()]);
+        $posts= DB::select("SELECT * From posts Where id > :id",['id'=>0]);
         return $posts;
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
