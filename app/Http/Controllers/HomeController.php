@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Stmt\Return_;
 
 class HomeController extends Controller
 {
@@ -21,19 +22,16 @@ class HomeController extends Controller
         // } catch (\Exception $e) {
             // DB::rollBack();
             // echo $e->getMessage();
-            $data= DB::table('country')->get();
+            $data =DB::table('country')->get();
+           return $data;
 
+           return view('home',['res'=>5,'name'=>'John']);
         }
-        
-        
-        $posts= DB::select("SELECT * From posts Where id > :id",['id'=>0]);//Получение
-        return $posts;
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
         // dump(config('database.connections.mysql.database'));
         // dump($_ENV);
-        return view('home',['res' => 5,'name'=>"john"]);
-    } 
+
     public function test(){
         return __METHOD__;
     }
