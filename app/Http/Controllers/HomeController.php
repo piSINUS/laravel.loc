@@ -22,10 +22,9 @@ class HomeController extends Controller
         // } catch (\Exception $e) {
             // DB::rollBack();
             // echo $e->getMessage();
-            $data =DB::table('country')->get();
-           return $data;
-
-           return view('home',['res'=>5,'name'=>'John']);
+            $data =DB::table('country')->select('Code','Name')->limit(5)->get();
+            dump($data);
+            
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
