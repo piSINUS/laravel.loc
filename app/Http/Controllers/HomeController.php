@@ -22,7 +22,9 @@ class HomeController extends Controller
         // } catch (\Exception $e) {
             // DB::rollBack();
             // echo $e->getMessage();
-            $data =DB::table('country')->select('Code','Name')->limit(5)->get();
+            // $data =DB::table('country')->select('Code','Name')->orderBy('Code','desc')->first();
+            // $data =DB::table('city')->select('ID','Name')->find(2);
+            $data =DB::table('city')->select('ID','Name')->where('id',"=",2)->get();
             dump($data);
             
         }
