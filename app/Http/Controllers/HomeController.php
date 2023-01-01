@@ -16,17 +16,30 @@ class HomeController extends Controller
         // DB::delete("DELETE FROM posts Where id > :id",['id'=>5]);
         // DB::beginTransaction();//Транзакции тип оброботка ошибки
         // try {
-            // DB::update("UPDATE posts SET created_at = ? WHERE created_at IS NULL", [NOW()]);
+            // DB::update("UPDATE posts SET created_at = ? WHERE created_at IS NULL", [NOW()]); как в гит
             // DB::update("UPDATE posts SET updated_at = ? WHERE updated_at IS NULL", [NOW()]);
             // DB::commit();
         // } catch (\Exception $e) {
-            // DB::rollBack();
+            // DB::rollBack(); откат
             // echo $e->getMessage();
-            // $data =DB::table('country')->select('Code','Name')->orderBy('Code','desc')->first();
-            // $data =DB::table('city')->select('ID','Name')->find(2);
-            $data =DB::table('city')->select('ID','Name')->where('id',"=",2)->get();
-            dump($data);
+            // $data =DB::table('country')->select('Code','Name')->orderBy('Code','desc')->first(); Первыйц в бд
+            // $data =DB::table('city')->select('ID','Name')->find(2);по ай ди вычиислил
+           
+            // $data = DB::table('city')->select('ID','Name')->where([ с спис условиями
+            //     ['id','>',1],
+            //     ['id','<',5]
+            // ])->get();
+            // $data =DB::table('city')->select('ID','Name')->where('id',"=",2)->get(); с условием
+            // $data = DB::table('country')->limit(10)->pluck('Name','Code'); опр валуе
+            // $data = DB::table('country')->count(); количество
+            // $data = DB::table('country')->max('Population'); max min пон сортир по колву 
+            // $data =DB::table('country')->avg('Population');avg - average(Средние) sum - summa (сумма)
             
+
+            // $data = DB::table('city')->select('CountryCode')->distinct()->get();//Выборка уник знач
+            // $data = DB::table('city')->select('city.ID', 'city.Name as city_name', 'country.Code', 'country.Name as country_name')->limit(10)->join('country', 'city.CountryCode', '=', 'country.Code')->orderBy('city.ID')->get(); join объеденяем всю уйню
+            
+            dd($data);
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
