@@ -2,6 +2,10 @@
 
 
 namespace App\Http\Controllers;
+
+use App\Models\City;
+use App\Models\Country;
+use App\Models\Post as ModelsPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Return_;
@@ -39,7 +43,17 @@ class HomeController extends Controller
             // $data = DB::table('city')->select('CountryCode')->distinct()->get();//Выборка уник знач
             // $data = DB::table('city')->select('city.ID', 'city.Name as city_name', 'country.Code', 'country.Name as country_name')->limit(10)->join('country', 'city.CountryCode', '=', 'country.Code')->orderBy('city.ID')->get(); join объеденяем всю уйню
             
-            dd($data);
+            // $data = Country::all() ;
+            // $data = Country::query()->limit(5)->get();
+            // $data = Country::limit(5)->get();
+            // $data = Country::where('Code','<','ALB')->select('Code','Name')->offset(1)->limit(5)->get();
+            // $data = City::find(5);
+            $post = new  ModelsPost();
+            $post->title= 'Cnfnmz1';
+            $post->content = "loream ipsum 1"; 
+            $post->save();
+
+            
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
