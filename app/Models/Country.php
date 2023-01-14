@@ -15,7 +15,7 @@ class Country extends Model
 {
     use HasFactory;
     protected $table ='country';
-    protected $ptimaryKey ='Code';
+    protected $primaryKey ='Code';
     public $incrementing = false ;
     protected $keyType = 'string';
 
