@@ -47,15 +47,22 @@ class HomeController extends Controller
             // $data = Country::query()->limit(5)->get();5 первых лимит
             // $data = Country::limit(5)->get();
             // $data = Country::where('Code','<','ALB')->select('Code','Name')->offset(1)->limit(5)->get();Where - где, Select - опр столбцы, Offset с какого начинать выборку,
-            // $data = City::find(5);
-            // $post = new  ModelsPost();
-            // $post->title= 'Cnfnmz1';
-            // $post->content = "loream ipsum 1"; 
+            // $data = City::find(5); Поиск args
+            // $post = new  ModelsPost();В бд по модели
+            // $post->title= 'Cnfnmz1'; Заполнение
+            // $post->content = "loream ipsum 1"; Заполнение
+            // $post->save();Сохранение
+            // ModelsPost::create(['title'=>'Post5','content'=>'Chat Huesosov ahahhahah']);
+            // $post = new ModelsPost();
+            // $post->fill(['title'=>'Post6','content'=>'Ili net']);
             // $post->save();
-            $data =Country::find('AGO');
-            dd($data);
 
-            
+            // $post= ModelsPost::find(2);
+            // $post->content='New contect Omg';
+            // $post->save();
+
+            $post = ModelsPost::find(3);
+            $post->delete();
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));

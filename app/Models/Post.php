@@ -19,5 +19,9 @@ class Post extends Model
     // protected $keyType = 'string';Понятно тип ключа строка
     //protected $attributes = ['contect'=>'Lorem'];запролнение авто 
     // protected $timestamps=false; слежка за полями
-    //protected $fillable = ['title', 'content']; г
+    protected $fillable = ['title', 'content']; // Вайт лист чтоб понимал что можно менять а чо нет чтлб юзер не мог поменять роль на админа
+    // protected $guarded = ['',''];Black list наоборт что филлбл ток защищеное свойство чтобы точно ни один гондон не получил  админку
 }
+
+
+ 
