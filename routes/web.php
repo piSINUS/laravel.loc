@@ -22,7 +22,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about', function(){
-    return "<h1>About page</h1>";
+    return view('home');
 });
 
 Route::get('/home',[HomeController::class,'index']);

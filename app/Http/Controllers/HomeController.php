@@ -61,8 +61,8 @@ class HomeController extends Controller
             // $post->content='New contect Omg';
             // $post->save();
 
-            $post = ModelsPost::find(3);
-            $post->delete();
+            // $post = ModelsPost::find(3);
+            // $post->delete();
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
