@@ -21,7 +21,7 @@
     <div class="selector"></div>
 
     <script > 
-        gsap.fromTo('.selector',{x:0,y:1},{x:1000});
+        gsap.fromTo('.selector',3,{x:0,y:1},{x:1000, ease:Bounce.easeOut});
     </script>
     <h1>About page</h1>
 </body>
