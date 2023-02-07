@@ -14,8 +14,8 @@ class AddRubrickToPost extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('rubrick_id');
-            
+            $table->integer('rubrick_id');//->Можно дописать nullable т.е  значения столбца стали null
+
         });
     }
 
@@ -27,7 +27,7 @@ class AddRubrickToPost extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+           $table->dropColumn('rubrick_id');
         });
     }
 }
