@@ -9,6 +9,7 @@ use App\Models\Post as ModelsPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Return_;
+use App\Models\Rubrick;
 
 class HomeController extends Controller
 {
@@ -63,7 +64,12 @@ class HomeController extends Controller
 
             // $post = ModelsPost::find(3);
             // $post->delete();
-            
+            // $post =ModelsPost::find(2) ;
+            // dd($post->title,$post->rubrick->title);Обращаемся к рубреке черезь связь с посттом
+            // $rubrick=Rubrick::find(3);
+            // dd($rubrick->title,$rubrick->post->title);Тож самое ток через рубрик к посту
+            $rubrick=Rubrick::find(1);
+            dd($rubrick->posts);
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
