@@ -68,8 +68,8 @@ class HomeController extends Controller
             // dd($post->title,$post->rubrick->title);Обращаемся к рубреке черезь связь с посттом
             // $rubrick=Rubrick::find(3);
             // dd($rubrick->title,$rubrick->post->title);Тож самое ток через рубрик к посту
-            $rubrick=Rubrick::find(1);
-            dd($rubrick->posts);
+            $rubrick=Rubrick::find(1)->posts;//Используем -> постс вместо   dd($rubrick->posts);
+          
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
