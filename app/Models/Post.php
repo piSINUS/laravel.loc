@@ -24,6 +24,10 @@ class Post extends Model
     public function rubrick(){
         return $this->belongsTo(Rubrick::class);
     }
+    public function tags(){
+        return $this-> belongsToMany(Tag::class);
+
+    }
 
 }
 

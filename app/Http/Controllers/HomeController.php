@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Country;
-use App\Models\Post as ModelsPost;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Stmt\Return_;
 use App\Models\Rubrick;
-
+use App\Models\Tag;
 class HomeController extends Controller
 {
 
@@ -68,8 +68,25 @@ class HomeController extends Controller
             // dd($post->title,$post->rubrick->title);Обращаемся к рубреке черезь связь с посттом
             // $rubrick=Rubrick::find(3);
             // dd($rubrick->title,$rubrick->post->title);Тож самое ток через рубрик к посту
-            $rubrick=Rubrick::find(1)->posts;//Используем -> постс вместо   dd($rubrick->posts);
-          
+            //$rubrick=Rubrick::find(1)->posts;//Используем -> постс вместо  
+            //dd($rubrick);
+
+
+            // $posts = ModelsPost::with('rubrick')->where('id','>',1)->get();// c with выводиться только 1 доп SQL запрос но выводятся сразу все и сразу
+            // foreach ($posts as $post){
+                //  dump($post->title,$post->rubrick->title);
+            // };//Ленивая загрузка когда нам надо но исполняются лишние SQL запросы без with
+        //    $post = Post::find(2);
+        //     dump($post->title);
+        //     foreach($post->tags as $tag){
+        //         dump($tag->title);
+        //     }
+            
+            $tag = Tag::find(2);
+            dump($tag->title);
+            foreach($tag->posts as $post){
+                dump($post->title);
+            }
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
