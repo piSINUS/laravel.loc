@@ -18,15 +18,15 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->name('home');
 
-Route::get('/about', function(){
-    return view('home');
-});
+// Route::get('/about', function(){
+//     return view('home');
+// });
 
-Route::get('/home',[HomeController::class,'index']);
-Route::get('/page/about',[PageController::class,'show']);
+// Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/page/about',[PageController::class,'show'])->name('page.about');
 Route::resource('/posts', PostController::class,['parameters'=>['posts'=>'slug']]);
 
 Route::fallback(function(){

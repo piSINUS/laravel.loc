@@ -82,11 +82,11 @@ class HomeController extends Controller
         //         dump($tag->title);
         //     }
             
-            $tag = Tag::find(2);
-            dump($tag->title);
-            foreach($tag->posts as $post){
-                dump($post->title);
-            }
+            // $tag = Tag::find(2);
+            // dump($tag->title);
+            // foreach($tag->posts as $post){
+            //     dump($post->title);
+            // }
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));
