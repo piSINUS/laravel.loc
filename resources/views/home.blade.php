@@ -1,10 +1,10 @@
-@extends('layouts.layout')
+@extends('layouts.layout')<!-- Подключаем фронт из layouts.layout с помощью extends -->
 
-@section('header')
-    @parent
-@endsection
+@section('header')<!-- @section('header') встает на месте yeild в шаблоне  -->
+    @parent<!-- берем секцию с лейаут ,но можем еще добавить контент в эту секцию-->
+@endsection <!-- показываем блейду конец секции @endsection  -->
 
-@section('content')
+@section('content')<!-- @section(') встает на месте yeild в шаблоне  -->
     <section class="jumbotron text-center">
         <div class="container">
             <h1>Home page</h1>
@@ -155,4 +155,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection<!-- показываем блейду конец секции @endsection  -->

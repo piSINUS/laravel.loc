@@ -1,3 +1,4 @@
+<!-- Цэ файл для импорта  в шаблон через include -->
 <footer class="text-muted">
     <div class="container">
         <p class="float-right">
