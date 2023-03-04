@@ -17,7 +17,7 @@
 <body>
 
 <header>
-    @section('header') 
+    @section('header') <!-- @section('header')  тут секция показывает контент для вывода на других страницах -->
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
             <div class="row">
@@ -46,16 +46,16 @@
             </button>
         </div>
     </div>
-    @show
+    @show<!-- @show мы сразу показываем секцию и закрываем  --> 
 </header>
 
 <main role="main">
 
-        @yield('content')
+        @yield('content')<!-- с помощью @yield('content') мы добавляем в наследуемый шаблон контент из section-->
 
 </main>
 
-@include('layouts.footer')
+@include('layouts.footer')<!-- @include('layouts.footer') для импорта частей с других страниц/шаблонов -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
