@@ -1,4 +1,7 @@
-@extends('layout.layout') 
+@extends('layouts.layout') 
+
+@section('title')@parent::{{$title}} @endsection
+
 @section('header')
     @parent
 @endsection 

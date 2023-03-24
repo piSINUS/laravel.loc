@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js'></script>
-    <title>Document</title>
+@extends('layouts.layout')
+@section('title')@parent:: About page @endsection
+@section('content')
     <style>
         .selector{
             width: 100px;
@@ -13,16 +8,20 @@
             background-color: blueviolet;
             margin: 10px;
         }
+        .Chokky{
+            font-family:cursive;
+            color:fuchsia ;
+        }
     </style>
+        <!-- @{{title}} чтобы блейд не читал уярим собакук перед секобками -->
 
-</head>
-<body>
 <div class="selector"></div>
     <div class="selector"></div>
-
+<div class = 'Chokky'><h2>Я шел по мосткам, и вдруг –Там, в глубине потока,Сквозят водяные цветы.</h2></div>
+       
     <script > 
-        gsap.fromTo('.selector',3,{x:0,y:1},{x:100, ease:Bounce.easeOut});
+        gsap.fromTo('.selector',3,{x:0,y:1},{x:500, ease:Bounce.easeOut});
     </script>
-    <h1>About page</h1>
-</body>
-</html>
+@endsection
+
+

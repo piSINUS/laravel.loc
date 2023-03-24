@@ -63,7 +63,7 @@ class HomeController extends Controller
             // $post->save();
 
             // $post = ModelsPost::find(3);
-            // $post->delete();
+            // $post->delete();  Удаление
             // $post =ModelsPost::find(2) ;
             // dd($post->title,$post->rubrick->title);Обращаемся к рубреке черезь связь с посттом
             // $rubrick=Rubrick::find(3);
@@ -87,6 +87,8 @@ class HomeController extends Controller
             // foreach($tag->posts as $post){
             //     dump($post->title);
             // }
+            $title = 'Home Page!' ;
+            return view('home', compact('title'));
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));

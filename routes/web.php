@@ -17,16 +17,17 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+// Route::get('/', function () { 
+//     return view('home');
+// })->name('home'); НАпрямую к блейду без контроллера
 
 // Route::get('/about', function(){
 //     return view('home');
 // });
 
-// Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/',[HomeController::class,'index'])->name('home');// рут через контролер к странице
 Route::get('/page/about',[PageController::class,'show'])->name('page.about');
+
 Route::resource('/posts', PostController::class,['parameters'=>['posts'=>'slug']]);
 
 Route::fallback(function(){
