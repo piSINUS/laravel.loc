@@ -88,7 +88,16 @@ class HomeController extends Controller
             //     dump($post->title);
             // }
             $title = 'Home Page!' ;
-            return view('home', compact('title'));
+            $data1 =range(1,20);
+            $data2 =  [
+                'title' => 'Title',
+                'content' =>'Content',
+                'keys' => 'Keywords'
+
+            ];
+            return view('home', compact('title','data1','data2'));
+
+       
         }
         // dump($_ENV['MY_SETTING']);
         // dump(env('MY_SETTING2'));

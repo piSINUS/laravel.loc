@@ -10,6 +10,29 @@
     <section class="jumbotron text-center">
         <div class="container">
             <h1>Home page</h1>
+
+            <!-- @if(count($data1)>20)
+                Count>20
+            @elseif(count($data1)<20)
+                Count < 20
+            @else
+                Count = 20
+            @endif -->
+            <!-- @isset($data3)
+                Isset data2
+            @endisset -->
+            <!-- @env('local')
+                <h1>Local</h1>
+            @endenv  ПРоверка среды разработки-->
+            <!-- @for($i=0;$i<count($data1); $i++)
+                @if($data1[$i]%2==0)
+                    {{$data1[$i]}}
+                @endif
+            @endfor -->
+            @foreach($data2 as $k => $v)
+                {{$k}} =>{{$v}}<br>
+            @endforeach
+
         </div>
     </section>
 
